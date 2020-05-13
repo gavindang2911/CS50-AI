@@ -45,6 +45,7 @@ def actions(board):
     		if cell == EMPTY:
     			result.add((i,j))
 
+
     return result
 
 
