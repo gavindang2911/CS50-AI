@@ -54,7 +54,17 @@ def result(board, action):
     """
     Returns the board that results from making move (i, j) on the board.
     """
-    raise NotImplementedError
+    if terminal(board):
+    	raise ValueError("Gamve over!")
+    elif action not in actions(board):
+    	raise ValueError("Invalid action")
+    else:
+    	player = player(board)
+    	resultBoard = deepcopy(board)
+    	i,j = action
+    	resultBoard[i][j] = player
+
+    return resultBoard
 
 
 def winner(board):
